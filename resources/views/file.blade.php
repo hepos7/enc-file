@@ -20,7 +20,9 @@
 
     <label id="file-label" for="file-input">Select a file</label>
     <input type="file" id="file-input" name="file" onchange="updateFileName()">
-
+    @error('file')
+        <div style="color: red;">{{ $message }}</div>
+    @enderror
     <div id="file-details" class="container">
         <div>
             <label >Name: </label>
@@ -45,9 +47,23 @@
                 <option value="decryption">Decrypt File</option>
             </select>
         </div>
+        @error('action')
+            <div style="color: red;">{{ $message }}</div>
+        @enderror
     </div>
 
-    
+    <div>
+        @if ($errors->any())
+            <div>
+                @foreach ($errors->all() as $error )
+                    <li style="color: red;">
+                        {{ $error }}
+                    </li>
+                @endforeach
+        
+            </div>
+        @endif
+    </div>
 
     <button id="submit-btn" type="submit" >Submit</button>
 </form>
