@@ -4,43 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>File Details</title>
+    <link href="{{ url('/css/details.css') }}" rel="stylesheet" type="text/css">
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f8f8f8;
-            color: #333;
-            margin: 0;
-            padding: 20px;
-            text-align: center;
-        }
-
-        h2 {
-            color: #3498db;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        li {
-            margin: 10px 0;
-        }
-
-        a {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #3498db;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 4px;
-            font-size: 16px;
-            transition: background-color 0.3s;
-        }
-
-        a:hover {
-            background-color: #2980b9;
-        }
+        
     </style>
 </head>
 <body>
@@ -54,6 +20,10 @@
     <h2>Processed File:</h2>
     <a href="{{ Storage::url($filePath) }}" download="{{ $processedFileName }}">
         Download Processed File
+    </a>
+
+    <a id="return" href="{{ route('home') }}" >
+        Upload New File
     </a>
 </body>
 </html>

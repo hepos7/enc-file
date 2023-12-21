@@ -15,9 +15,7 @@ use App\Http\Controllers\FileController;
 
 Route::get('/', function () {
     return view('file');
-});
+})->name('home');
 
 Route::post('/procces', [FileController::class, 'proccesFile'])->name('proccesFile');
-Route::post('/upload', [FileController::class, 'encryptFile']);
-Route::post('/decrypt', [FileController::class, 'decryptFile'])->name('decryptFile');
 
